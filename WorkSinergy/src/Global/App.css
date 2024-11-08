@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Albert Sans", sans-serif;
+  color: var(--font-color);
+}
+
+#root {
+  --primary-color: #F2D64B;
+  --secondary-color: #00A695;
+  --tertiary-color: #253659;
+  --accent-color: #1a263d;
+
+  --font-color: #151212;
+  --background-light-color: #ffffff;
+  --background-dark-color: #151212;
+}
+
+
+
+
