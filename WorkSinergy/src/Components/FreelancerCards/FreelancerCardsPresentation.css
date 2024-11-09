@@ -1,0 +1,105 @@
+
+.cardContainer
+{
+    width: 600px;
+    background-color: #fbfbfb;
+    padding-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.profileImage
+{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+
+}
+
+.profileImage img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.topCard
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+    padding: 30px 0 0px 0;
+}
+
+.information
+{
+    width: 70%;
+}
+
+.information small > i
+{
+    color: var(--primary-color);
+}
+
+.information p
+{
+    width: 40ch;
+    margin: 10px 0 10px 0;
+}
+
+.information h3
+{
+    margin: 10px 0 10px 0;
+}
+
+.serviceInfo
+{
+    display: inline-block;
+    padding: 10px 0;
+    color: #00520F;
+}
+
+.serviceInfo i
+{
+    color: #00520F;
+}
+
+.botCardControls
+{
+    height: 2rem;
+    width: calc(100% - 3rem);
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: end;
+}
+
+.btnCard
+{
+    width: 110px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btnAsk
+{
+    margin-left: 20px;
+    background-color: var(--primary-color);
+}
+
+.btnSave
+{
+    background-color: #f1f1f1;
+}
+
+.btnSave i
+{
+    margin-right: 5px;
+}
+
+.cardControls i
+{
+    margin: 0 10px;
+    cursor: pointer;
+}

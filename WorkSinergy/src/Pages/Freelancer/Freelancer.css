@@ -1,0 +1,127 @@
+
+.cuadroBusquedaFreelancer
+{
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+    height: 200px;
+    margin-top: 2rem;
+    border-radius: 8px;
+    background-color: var(--cuartary-color);
+
+    position: relative;
+}
+
+.maintext
+{
+    font-size: 1.6rem;
+    margin: 3rem 0 0 2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.supportText
+{
+    width: 145px;
+    display: inline-block;
+    margin: .50rem 0 0 2rem;
+    color: var(--primary-color);
+    border-bottom: solid 2px var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+}
+
+.support
+{
+    display: flex;
+    align-items: baseline;
+}
+
+.support i
+{
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.cuadroBusquedaFreelancer span
+{
+    color: var(--primary-color);
+} 
+
+.figuraFondo
+{
+    position: relative;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    right: 0;
+}
+
+.circulo1
+{
+    width: 238px;
+    height: 238px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -60%;
+    right: -10%;
+    z-index: 0;
+}
+
+.circulo2
+{
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+
+.barraBusqueda
+{
+    width: 100%;
+    max-width: calc(95% - 3rem);
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.barraBusqueda input
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding-left: 50px;
+    background-color: #F4F4F4;    
+}
+
+.barraBusqueda i
+{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(0%, -50%);
+}
+
+.cardsContainer
+{
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+    min-height: 500px;
+
+    /* background-color: #f1f1f1; */
+    margin-top: 50px;
+}

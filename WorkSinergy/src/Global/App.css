@@ -12,11 +12,24 @@
   --primary-color: #F2D64B;
   --secondary-color: #00A695;
   --tertiary-color: #253659;
+  --cuartary-color: #002636;
+  ;
   --accent-color: #1a263d;
 
   --font-color: #151212;
   --background-light-color: #ffffff;
   --background-dark-color: #151212;
+}
+
+.btn
+{
+  transition: ease all 300ms;
+  cursor: pointer;
+}
+
+.btn:active
+{
+  transform: scale(.85);
 }
 
 
