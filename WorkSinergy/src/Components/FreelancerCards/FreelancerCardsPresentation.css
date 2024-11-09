@@ -1,9 +1,8 @@
 
 .cardContainer
 {
-    width: 600px;
     background-color: #fbfbfb;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-radius: 8px;
 }
 
@@ -27,15 +26,9 @@
 .topCard
 {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-grow: 2;
+    display: grid;
+    grid-template-columns: auto auto 80px;
     padding: 30px 0 0px 0;
-}
-
-.information
-{
-    width: 70%;
 }
 
 .information small > i
@@ -43,9 +36,15 @@
     color: var(--primary-color);
 }
 
+.information
+{
+    display: flex;
+    flex-direction: column;
+}
+
 .information p
 {
-    width: 40ch;
+    max-width: 40ch;
     margin: 10px 0 10px 0;
 }
 
@@ -69,8 +68,8 @@
 .botCardControls
 {
     height: 2rem;
-    width: calc(100% - 3rem);
-    /* background-color: aqua; */
+    width: calc(100% - .50rem);
+
     display: flex;
     justify-content: end;
 }
@@ -100,6 +99,8 @@
 
 .cardControls i
 {
-    margin: 0 10px;
+    padding: 10px;
+    margin: 0 5px;
+    /* background-color: red; */
     cursor: pointer;
 }

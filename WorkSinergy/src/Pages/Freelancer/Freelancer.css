@@ -3,7 +3,7 @@
 {
     width: calc(100% - 10rem);
     max-width: 1500px;
-    height: 200px;
+    min-height: 200px;
     margin-top: 2rem;
     border-radius: 8px;
     background-color: var(--cuartary-color);
@@ -47,18 +47,25 @@
 .cuadroBusquedaFreelancer span
 {
     color: var(--primary-color);
-} 
+}
 
 .figuraFondo
 {
-    position: relative;
     position: absolute;
     width: 300px;
     height: 200px;
-    overflow: hidden;
     border-radius: 8px;
-
+    
     right: 0;
+    overflow: hidden;
+}
+
+@media(width < 900px)
+{
+    .figuraFondo
+    {
+        display: none;
+    }
 }
 
 .circulo1
@@ -120,8 +127,15 @@
 {
     width: calc(100% - 10rem);
     max-width: 1500px;
-    min-height: 500px;
-
-    /* background-color: #f1f1f1; */
     margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(400px, 1fr)
+    );
+    column-gap: 1rem;
+    row-gap: 1rem;
+    padding: 2rem 0;
 }
+

@@ -12,11 +12,11 @@ export const Freelancer: React.FC = () => {
                     <div className="circulo2"></div>
                 </div>
 
-                <p className="maintext">
+                <p className="maintext textoBusqueda">
                     ¡Busca el trabajo que se adapte a tus <span>habilidades</span>!
                 </p>
 
-                <div className="support">
+                <div className="support textoBusqueda">
                     <a href="#" className="supportText">
                         Empieza a explorar 
                     </a>
@@ -31,6 +31,9 @@ export const Freelancer: React.FC = () => {
             </section>
 
             <section className="cardsContainer">
+                <FreelancerCardsPresentation />
+                <FreelancerCardsPresentation />
+                <FreelancerCardsPresentation />
                 <FreelancerCardsPresentation />
             </section>
         </>
