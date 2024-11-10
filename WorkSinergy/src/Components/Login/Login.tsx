@@ -32,7 +32,7 @@ export const Login: React.FC = () => {
                         <label htmlFor="">Contraseña</label>
                         <i className="fa-solid fa-lock"></i>
                         <input type="password" />
-                        <i className="fa-solid fa-eye passwordLogin"></i>
+                        <i className="fa-solid fa-eye-slash passwordLogin"></i>
                     </div>
 
                     <small className="forget"> ¿Olvidaste tu contraseña?</small>
