@@ -1,11 +1,16 @@
 import React from "react";
 import './Freelancer.css'
 import { FreelancerCardsPresentation } from "../../Components/FreelancerCards/FreelancerCardsPresentation";
+import { Navbar } from "../../Components/Navigation/Navbar/Navbar";
 
 export const Freelancer: React.FC = () => {
 
     return(
         <>
+            <section className="navContainer">
+                <Navbar />
+            </section>
+
             <section className="cuadroBusquedaFreelancer">
                 <div className="figuraFondo">
                     <div className="circulo1"></div>
@@ -27,10 +32,25 @@ export const Freelancer: React.FC = () => {
                 <div className="barraBusqueda">
                     <i className="fa-solid fa-magnifying-glass"></i>
                     <input type="text" placeholder="Buscar"/>
+
+                    <div className="cua1 cua"></div>
+                    <div className="cua2 cua"></div>
                 </div>
             </section>
 
             <section className="cardsContainer">
+                <div className="sortFreelancer">
+                    <span className="sortText">Filtrar por: </span>
+                    <select defaultValue={1}>
+                        <option value="1">
+                            <span className="option">Nuevos</span>
+                        </option>
+
+                        <option value="1">
+                            <span className="option">Nuevos</span>
+                        </option>
+                    </select>
+                </div>
                 <FreelancerCardsPresentation />
                 <FreelancerCardsPresentation />
                 <FreelancerCardsPresentation />

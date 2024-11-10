@@ -1,0 +1,158 @@
+
+.login
+{
+    background-color: var(--primary-color);
+    width: 800px;
+    height: 600px;
+    border-radius: 8px;
+
+    display: flex;
+}
+
+.imageBanner
+{
+    /* background-color: red; */
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageBanner img
+{
+    height: 530px;
+    border-radius: 5px;
+}
+
+.loginControls
+{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 40px 40px 0;
+}
+
+.loginControls h3
+{
+    font-size: 1.6rem;
+    color: #383838;
+}
+
+.or
+{
+    margin: 0 10px;
+}
+
+.divider 
+{
+    /* background-color: red; */
+    margin: 10px 0;
+    width: 360px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divider hr
+{
+    width: 100%;
+    height: .5px;
+    border: solid 1px #fff;
+    border-radius: 10px;
+}
+
+.autenticacion
+{
+    width: 360px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+    margin-bottom: 1rem;
+    font-size: .95rem;
+
+    border-radius: 8px;
+    background-color: var(--background-light-color);
+    cursor: pointer;
+    transition: ease all .2s;
+}
+
+.autenticacion:hover
+{
+    background-color: var(--accent-color);
+}
+
+.autenticacion:hover p
+{
+    color: #fff;
+}
+
+.autenticacion:hover i
+{
+    color: #fff;
+}
+
+.autenticacion p
+{
+    cursor: pointer;
+    color: var(--tertiary-color);
+}
+
+.autenticacion i 
+{
+    color: var(--tertiary-color);
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    margin-left: .75rem;
+}
+
+.firstAuth
+{
+    margin: 10px 0 0 0;
+    background-color: var(--secondary-color);
+}
+
+.firstAuth p
+{
+    color: #fff;
+    font-weight: 600;
+}
+
+.firstAuth i
+{
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.terminos
+{
+    font-size: .75rem;
+}
+
+.confirm
+{
+    width: 100%;
+    text-align: end;
+    padding-right: 5px;
+    font-size: .8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+}
+
+.confirm span
+{
+    transition: ease all .3s;
+    border-bottom: solid 1px transparent;
+}
+
+.confirm span:hover
+{
+    border-bottom: solid 1px #000;
+    
+}

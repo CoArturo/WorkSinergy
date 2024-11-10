@@ -3,6 +3,8 @@ import './Login.css'
 
 export const Login: React.FC = () => {
 
+
+
     return(
         <>
             <div className="login">
@@ -13,41 +15,29 @@ export const Login: React.FC = () => {
 
                 <div className="loginControls">
 
-                    <h3>Crea una cuenta nueva</h3>
-
-                    <div className="autenticacion firstAuth">
-                        <i className="fa-regular fa-envelope"></i>
-                        <p>Registrarse con Google</p>
+                    <div className="backLogin">
+                        <i className="fa-solid fa-arrow-left"></i>
+                        <p>Volver</p>
                     </div>
 
-                    <div className="divider">
-                        <hr />
-                            <span className="or">
-                                o   
-                            </span>
-                        <hr />
+                    <h3>Continua con tu correo o nombre de usuario</h3>
+
+                    <div className="loginInputs">
+                        <label htmlFor="">Correo electrónico</label>
+                        <i className="fa-solid fa-envelope"></i>
+                        <input type="text" />
                     </div>
 
-                    <div className="autenticacion">
-                        <i className="fa-brands fa-google"></i>
-                        <p>Registrarse con Google</p>
+                    <div className="loginInputs">
+                        <label htmlFor="">Contraseña</label>
+                        <i className="fa-solid fa-lock"></i>
+                        <input type="password" />
+                        <i className="fa-solid fa-eye passwordLogin"></i>
                     </div>
 
-                    <div className="autenticacion">
-                        <i className="fa-brands fa-facebook"></i>
-                        <p>Registrarse con Facebook</p>
-                    </div>
-
-                    <div className="autenticacion">
-                        <i className="fa-brands fa-x-twitter"></i>
-                        <p>Registrarse con X</p>
-                    </div>
-
-                    <p className="confirm"> ¿Ya tienes una cuenta? <span>Inicia sesión</span> </p>
-
-                    <p className="terminos">
-                        Al unirte, aceptas los Términos de servicio de WorkSynergy, lee nuestra Política de privacidad para saber cómo utilizamos tus datos personales.
-                    </p>
+                    <small className="forget"> ¿Olvidaste tu contraseña?</small>
+                    
+                    <button className="btn">Iniciar sesión</button>
 
                 </div>
 

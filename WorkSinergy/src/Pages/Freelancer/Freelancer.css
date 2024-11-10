@@ -1,4 +1,10 @@
 
+.navContainer
+{
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+}
+
 .cuadroBusquedaFreelancer
 {
     width: calc(100% - 10rem);
@@ -101,6 +107,8 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
+
+    
 }
 
 .barraBusqueda input
@@ -127,7 +135,8 @@
 {
     width: calc(100% - 10rem);
     max-width: 1500px;
-    margin-top: 50px;
+    margin-top: 75px;
+    position: relative;
 
     display: grid;
     grid-template-columns: repeat(
@@ -138,4 +147,23 @@
     row-gap: 1rem;
     padding: 2rem 0;
 }
+
+.sortFreelancer
+{
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}
+
+.sortFreelancer select
+{
+    border: none;
+    outline: none;
+    width: auto;               
+    background-color: transparent;
+}
+
+.sortFreelancer select option {        
+    background-color: transparent; 
+  }
 

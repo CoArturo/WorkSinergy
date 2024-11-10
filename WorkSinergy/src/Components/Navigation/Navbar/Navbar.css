@@ -1,0 +1,72 @@
+nav
+{
+    width: 100%;
+    max-width: 1500px;
+    height: 100px;
+}
+
+.navList
+{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navList li
+{
+    list-style: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.navList li:nth-child(1), .navList li:nth-child(2)
+{
+    margin-right: auto;
+}
+
+.navLogo
+{
+    width: 200px;
+    object-fit: cover;
+}
+
+.logoAlterno
+{
+    display: none;
+}
+
+.logoAlterno img
+{
+    width: 50px;
+    object-fit: cover;
+}
+
+.btnSignNav
+{
+    background-color: #0E1217;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: ease all 300ms;
+
+    &:hover
+    {
+        background-color: var(--secondary-color);
+    }
+}
+
+@media(width < 900px)
+{
+    .navLogo
+    {
+        display: none;
+    }
+
+    .logoAlterno
+    {
+        display: inline;
+    }
+}
