@@ -3,7 +3,9 @@ import './Login.css'
 
 export const Login: React.FC = () => {
 
-
+    const whats = async () => {
+        window.open("https://wa.me/?text=https://www.youtube.com/watch?v=wz8pNp0qJtA&t=642s&ab_channel=FaridDieck", "_blank")
+    }
 
     return(
         <>
@@ -37,7 +39,7 @@ export const Login: React.FC = () => {
 
                     <small className="forget"> ¿Olvidaste tu contraseña?</small>
                     
-                    <button className="btn">Iniciar sesión</button>
+                    <button className="btn" onClick={whats}>Iniciar sesión</button>
 
                 </div>
 

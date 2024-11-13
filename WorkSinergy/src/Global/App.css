@@ -25,11 +25,6 @@
 {
   transition: ease all 300ms;
   cursor: pointer;
-
-  &:hover
-  {
-    transform: scale(.98);
-  }
 }
 
 .btn:active
