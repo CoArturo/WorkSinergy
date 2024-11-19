@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import './FreelancerCardsPresentation.css'
+import { Navigate, useNavigate} from "react-router-dom";
+import { UserContext } from "../../contexts/UserProvider";
 
 export const FreelancerCardsPresentation: React.FC = () => {
+
+    const navigate = useNavigate();
+    const { usuario, setUsuario } = useContext(UserContext)
+    
+    useEffect(()=>{
+        if(usuario.if == null)
+        {
+            navigate("/login")
+        }
+    }, [])
 
     return(
         <>

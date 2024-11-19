@@ -1,6 +1,7 @@
 import React from "react";
 import './ClientPostJob.css'
 import { Select } from "antd";
+import { Navbar } from "../../Components/Navigation/Navbar/Navbar";
 
 export const ClientPostJob: React.FC = () => {
 
@@ -11,7 +12,6 @@ export const ClientPostJob: React.FC = () => {
                     <h1>Publica un trabajo</h1>
                     <p>Sigue los siguientes pasos para tu publicación</p>
                 </section>
-                
                 <section className="postJobForm">
                     <article className="postJob1Step postJobStep">
                         
@@ -150,6 +150,66 @@ export const ClientPostJob: React.FC = () => {
                         </div>
 
                     </article>
+
+                    <article className="postJob5Step postJobStep">
+                        
+                        <div className="paso5">
+                            <div className="stepsNumber paso5Number">
+                                <p>5</p>
+                            </div>
+                            <div className="esferas">
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                                <div className="esfera"></div>
+                            </div>
+                        </div>
+
+                        <div className="step5Form stepForm">
+                            <h2>Descripción del Proyecto</h2>
+                            <p className="stepTip"><span><i className="fa-regular fa-lightbulb"></i> Tip:</span> Esto nos ayudará a emparejarlo con el freelancer dentro de su rango.</p>
+                            <div className="inputsStepForm5">
+                                <div className="inputStepForm5">
+                                    <label htmlFor="pricePerHour"></label>
+                                    <i className="fa-regular fa-sack-dollar"></i>
+                                    <p>Precio por hora</p>
+                                    <input type="radio" name="payTerm" id="pricePerHour"/>
+                                </div>
+
+                                <div className="inputStepForm5">
+                                    <label htmlFor="fixedPrice"></label>
+                                    <i className="fa-regular fa-clock"></i>
+                                    <p>Precio fijo</p>
+                                    <input type="radio" name="payTerm" id="fixedPrice"/>
+                                </div>
+                            </div>
+                            <h3>Divisa</h3>
+                            <p className="stepTip stepTip5">Elige la moneda de preferencia para el pago.</p>
+                            <Select placeholder="Selecciona una categoria..." style={{width: 280, height:50, marginRight:30}} options={[{ value: 'sample', label: <span>sample</span> }]} />
+                            <h3>Especifica el monto</h3>
+
+                            <div className="inputsStepForm5">
+
+                                <div className="inputAmout">
+                                    <input type="text" placeholder="Desde" name="payTerm" id="pricePerHour"/>
+                                    <p>/hr</p>
+                                </div>
+
+                                <div className="inputAmout">
+                                    <input type="text" placeholder="Hasta" name="payTerm" id="fixedPrice"/>
+                                    <p>/hr</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </article>
+                    
                 </section>
             </main>
         </>

@@ -7,10 +7,6 @@ export const Freelancer: React.FC = () => {
 
     return(
         <>
-            <section className="navContainer">
-                <Navbar />
-            </section>
-
             <section className="cuadroBusquedaFreelancer">
                 <div className="figuraFondo">
                     <div className="circulo1"></div>

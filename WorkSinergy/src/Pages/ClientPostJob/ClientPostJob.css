@@ -4,6 +4,23 @@
     margin: 0%;
 }
 
+.habilidades
+{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.habilidad
+{
+    padding: 10px 20px;
+    background-color: #A9EADE;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 .stepForm
 {
     margin-top: 5px;
@@ -32,17 +49,21 @@
     width: calc(100% - 10rem);
     max-width: 1500px;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* background-color: rgb(216, 216, 216); */
 }
 
-.postJobForm
+.postJobTitle
 {
+    margin-right: auto;
     margin-left: 4rem;
 }
 
 .postJobStep
 {
-    max-width: 650px;
+    max-width: 1050px;
     display: flex;
     padding: 1rem 0 0 0;
 }
@@ -90,12 +111,13 @@
 {
     margin-left: 1.7rem;
     margin-top: 5px;
-    font-size: .80rem;
+    font-size: .90rem;
 }
 
 .stepExamples
 {
     font-size: .90rem;
+    max-width: 800px;
 }
 
 .stepForm span
@@ -109,6 +131,7 @@
     border: solid 1.5px #E8E4E4;
     background-color: #FBFBFB;
     width: 100%;
+    max-width: 800px;
     outline: none;
     padding-left: 20px;
     margin: 1rem 0;
@@ -216,21 +239,108 @@
     margin: 1rem 0;
 }
 
+/* Estilos paso 5 */
 
-.habilidades
+.paso5
 {
     display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 1rem;
+    height: 400px;
+}
+
+.postJob5Step
+{
+    display: flex;
     padding: 1rem 0;
 }
 
-.habilidad
+.paso5Number
 {
-    padding: 10px 20px;
-    background-color: #A9EADE;
-    border-radius: 30px;
-    margin-right: 10px;
+    background-color: #a890d4;
+}
+
+.inputsStepForm5 
+{
+    width: 100%;
+    display: flex;
+    /* background-color: #04BF9D; */
+
+    /* height: 50px; */
+    outline: none;
+
+    margin: 1rem 0 0 0;
+}
+
+.inputStepForm5
+{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-wrap: nowrap;
+    background-color: #FBFBFB;
+    border: solid 1px #E8E4E4;
+    border-radius: 8px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.inputStepForm5 input
+{
+    width: auto;
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+.inputStepForm5 i
+{
+    width: auto;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.inputStepForm5 label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.stepTip5
+{
     margin-bottom: 10px;
 }
 
+.postJob5Step h3
+{
+    margin: 1rem 0;
+}
+
+.inputAmout
+{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-wrap: nowrap;
+    border-radius: 8px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.inputAmout input
+{
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.inputAmout p 
+{
+    margin-right: 20px;
+}
