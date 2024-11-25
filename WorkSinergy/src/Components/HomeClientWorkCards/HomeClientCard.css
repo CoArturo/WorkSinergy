@@ -1,0 +1,52 @@
+.workCard
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 160px;
+    /* backgr1und-color: brown; */
+    padding: 15px 15px;
+    background-color: #FBFBFB;
+    border: solid 1px #E8E4E4;
+    border-radius: 8px;
+}
+
+.workLabel
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.workLabel p
+{
+    background-color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: .80rem;
+    font-weight: bold;
+}
+
+.titleWorkCard
+{
+    font-weight: bold;
+    margin: .70rem;
+}
+
+.workCard button
+{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: var(--background-dark-color);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.titleWorks button > i
+{
+    color: #fff;
+    margin-right: 10px;
+    font-size: 12px;
+}

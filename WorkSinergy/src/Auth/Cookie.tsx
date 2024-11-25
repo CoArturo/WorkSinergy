@@ -42,6 +42,7 @@ export function getCookieDecrypt() {
     };
 
     let cookieJWT = cookies.get("jwt")
+
     if(cookieJWT)
     {
         let decryptMessage = Crypto.AES.decrypt(cookies.get("jwt"), "123")

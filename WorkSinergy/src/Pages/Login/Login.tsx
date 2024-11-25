@@ -5,6 +5,7 @@ import { UserContext } from "../../contexts/UserProvider"
 import { getCookie, getCookieDecrypt, removeCookie, setCookie } from "../../Auth/Cookie"
 import { UserBody } from "../../Interfaces/UserBody"
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../contexts/UserContextZustand"
 
 
 
@@ -22,8 +23,9 @@ export const Login: React.FC = () => {
 
     const body:UserLogin = user;
 
+    const { userContext, setUserContext } = useUserContext()
+
     const navegarHome = () => {
-        console.log(usuario)
         if(usuario.roles[0] == "Client" && usuario.roles[0] != "")
         {
             navigate("/freelancerhome")
@@ -35,18 +37,7 @@ export const Login: React.FC = () => {
     }
 
     useEffect(() => {
-        if(!isInitialLoad)
-        {
-            console.log("Set de usuario (contexto)");
-            setUsuario((prevUsuario: UserBody) => ({
-                ...prevUsuario,
-                ...userFetch,
-            }))
-        }
-    }, [userFetch]);
-
-    useEffect(() => {
-        if(!isInitialLoad && usuario.id != "")
+        if(!isInitialLoad && userContext.id != "")
         {
             console.log("Set de cookies");
             setCookie(usuario)
@@ -57,13 +48,17 @@ export const Login: React.FC = () => {
                 navegarHome()
             }
         }
-    }, [usuario]);
+    }, [userContext]);
 
     useEffect(()=>{
         setIsInitialLoad(false)
-        setUsuario(getCookieDecrypt)
-        console.log(getCookieDecrypt)
-        
+  
+        setUserContext(getCookieDecrypt())  
+
+        if(usuario.roles[0] == "Client")
+        {
+            navigate("/")
+        }
     }, [])
 
     const autenticarLogin = async() => {
@@ -76,12 +71,13 @@ export const Login: React.FC = () => {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.id != null)
             {
-                setUserFetch((prevUserFetch) => ({...prevUserFetch, ...data}))
+                setUserContext(data)
+                setCookie(data)
+                navegarHome()
             }
-            
         })
         .catch((error) => console.error("Error: ", error))
     }

@@ -1,0 +1,119 @@
+
+.homeClientContainer
+{
+    /* background-color: aqua; */
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+}
+
+.homeClientBanner
+{
+    background-image: url("assets/images/homeClienteBanner.png");
+    background-size: cover;
+    width: 100%;
+    height: 157px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.homeClientElements
+{
+    background-color: rgba(0, 0, 0, 0.404);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.homeClientBanner h2, small
+{
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.homeClientBanner span
+{
+    color: var(--primary-color);
+}
+
+
+.workHeader
+{
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    color: #000;
+}
+
+.workHeader small
+{
+    font-weight: 400;
+    color: #000;
+}
+
+.workHeader h2
+{
+    font-weight: 400;
+    color: #000;
+}
+
+.workHeader span
+{
+    font-weight: bold;
+}
+
+.titleWorks
+{
+    margin-bottom: 1.5rem;
+    display: flex;
+    width: 100%;
+}
+
+.titleWorks h2
+{
+    font-size: 1.2rem;
+}
+
+.titleWorks a
+{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.titleWorks button
+{
+    margin-left: auto;
+    margin-right: 5rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--background-dark-color);
+    color: #fff;
+}
+
+.workType
+{
+    width: 100%;
+    padding: 0 2.5rem;
+    /* background-color: aqua; */
+}
+
+.talentHeader
+{
+    margin: 1.5rem 0;
+    display: flex;
+    width: 100%;
+}
+
+.talentHeader h2
+{
+    font-size: 1.2rem;
+}
+
+.talentHeader a
+{
+    font-size: 1rem;
+    font-weight: 300;
+}

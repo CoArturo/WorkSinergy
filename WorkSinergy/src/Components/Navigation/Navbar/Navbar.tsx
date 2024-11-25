@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
                             <img src="assets/logos/logo-lite.svg"/>
                         </Link>
                     </li>
-                    <li><Link className="navLinks" to="/freelancerhome">Freelancer</Link></li>
+                    <li><Link className="navLinks" to="/">Home</Link></li>
                     <li><Link className="navLinks" to="/postnewjob">PostJobs</Link></li>
                     <li><Link className="navLinks" to="/freelancer">Jobs</Link></li>
                     <li className="navSignLink btn" onClick={()=>{navigate("/login")}}>Log-In</li>
