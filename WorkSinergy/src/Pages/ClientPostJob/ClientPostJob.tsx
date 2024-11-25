@@ -188,8 +188,7 @@ export const ClientPostJob: React.FC = () => {
                             </div>
 
                             <div className="habilidades">
-                                {
-
+                                {categories &&
                                     categories
                                         .filter((category) => categoriesUser.includes(category.id))
                                         .map((category) => (
@@ -234,7 +233,7 @@ export const ClientPostJob: React.FC = () => {
                                         style={{width: 280, height:50, marginRight:30}} 
                                         defaultValue={null} 
                                         value={0}>
-                                        {
+                                        {skills &&
                                             skills.map((skill) => {
                                                 return(
                                                     <Select.Option key={skill.id} value={skill.id}> {skill.name} </Select.Option>
@@ -246,8 +245,7 @@ export const ClientPostJob: React.FC = () => {
                             <br />
                             <p>Habilidades seleccionadas</p>
                             <div className="habilidades">
-                                {
-
+                                {skills &&
                                     skills
                                         .filter((skill) => skillsUser.includes(skill.id))
                                         .map((skill) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import './Freelancer.css'
 import { FreelancerCardsPresentation } from "../../Components/FreelancerCards/FreelancerCardsPresentation";
-import { Navbar } from "../../Components/Navigation/Navbar/Navbar";
+import { FreelancerCardsContainer } from "../../Components/FreelancerCards/FreelancerCardsContainer";
 
 export const Freelancer: React.FC = () => {
 
@@ -47,10 +47,9 @@ export const Freelancer: React.FC = () => {
                         </option>
                     </select>
                 </div>
-                <FreelancerCardsPresentation />
-                <FreelancerCardsPresentation />
-                <FreelancerCardsPresentation />
-                <FreelancerCardsPresentation />
+
+                <FreelancerCardsContainer />
+                
             </section>
         </>
     )

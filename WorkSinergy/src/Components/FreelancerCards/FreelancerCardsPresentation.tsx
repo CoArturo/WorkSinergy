@@ -1,19 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './FreelancerCardsPresentation.css'
 import { Navigate, useNavigate} from "react-router-dom";
-import { UserContext } from "../../contexts/UserProvider";
+import { PostJob, PostJobResponse } from "../../Interfaces/Post";
 
-export const FreelancerCardsPresentation: React.FC = () => {
+interface props {
+    post: PostJobResponse
+}
 
-    const navigate = useNavigate();
-    const { usuario, setUsuario } = useContext(UserContext)
+export const FreelancerCardsPresentation: React.FC<props> = ({post}) => {
     
-    useEffect(()=>{
-        if(usuario.if == null)
-        {
-            navigate("/login")
-        }
-    }, [])
+    const navigate = useNavigate();
 
     return(
         <>
@@ -26,20 +22,16 @@ export const FreelancerCardsPresentation: React.FC = () => {
                     </div>
 
                     <div className="information">
-                        <h4>Loki Cabreja</h4>
+                        <h4>Aqui va el nombre {post.creatorUserId}</h4>
                         <small>@loki_cabreja04 <i className="fa-solid fa-star"></i> 3.8</small>
 
-                        <h3>UI Designer Needed for Restaurant Application</h3>
+                        <h3>{post.title}</h3>
 
                         <p>
-                            We are seeking a skilled UI/UX Designer to create a landing page design 
-                            for Platt & Co., an independent consultancy. The project is time-sensitive 
-                            and must be completed within four hours (by 8 PM ET). The design should be 
-                            based on the structure and style of the Home and About pages from this 
-                            reference website: Interface EU Website: https://www.interface-eu.org/ 
+                            {post.description}
                         </p>
 
-                        <span className="serviceInfo"><i className="fa-regular fa-clock"></i> USD$25.00 - USD$50.00</span>
+                        <span className="serviceInfo"><i className="fa-regular fa-clock"></i> USD${post.from} - USD${post.to}</span>
                     </div>
                     
                     <div className="cardControls">
@@ -51,7 +43,7 @@ export const FreelancerCardsPresentation: React.FC = () => {
 
                 <div className="botCardControls">
                     <button className="btn btnCard btnSave"><i className="fa-regular fa-bookmark"></i>Guardar</button>
-                    <button className="btn btnCard btnAsk">Solicitar</button>
+                    <button className="btn btnCard btnAsk" onClick={()=>navigate(`/solicitar?id=${post.id}`)}>Solicitar</button>
                 </div>
 
             </article>

@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
                     </li>
                     <li><Link className="navLinks" to="/">Home</Link></li>
                     <li><Link className="navLinks" to="/postnewjob">PostJobs</Link></li>
-                    <li><Link className="navLinks" to="/freelancer">Jobs</Link></li>
+                    <li><Link className="navLinks" to="/freelancerhome">Jobs</Link></li>
                     <li className="navSignLink btn" onClick={()=>{navigate("/login")}}>Log-In</li>
                     <li className="navSignLink btn" onClick={()=>removeCookie}>Log Out</li>
                 </ul>
