@@ -1,0 +1,126 @@
+.jobOffersContainer
+{
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.jobOffer
+{
+    width: calc(100% - 10rem);
+    max-width: 1000px;
+    background-color: #FBFBFB;
+    border: solid 1px #F1F1F1;
+    border-radius: 8px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.jobOfferHeader
+{
+    display: flex;
+    padding: 1rem 0;
+}
+
+.jobOfferHeader i 
+{
+    margin-right: 1rem;
+}
+
+.jobOfferTitle
+{
+    margin-bottom: 1rem;
+}
+
+.jobOfferDescription
+{
+    color: #4F4F4F;
+    margin-bottom: 1rem;
+}
+
+.jobOfferAbilities
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jobOfferAbility
+{
+    background-color: #2A272D;
+    color: #fff;
+    padding: 7px 1.3rem;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+
+.jobOfferAbility p
+{
+    color: #fff;
+    font-size: .80rem;
+}
+
+.jobOfferDetails
+{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.jobOfferDetail
+{
+    margin-right: 2rem;
+}
+
+.jobOfferDetail label
+{
+    font-size: .90rem;
+}
+
+.jobOfferDetail p
+{
+    font-size: .85rem;
+    color: #4F4F4F;
+}
+
+.jobOfferAction
+{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.jobOfferAction button
+{
+    width: 150px;
+    height: 30px;
+    background-color: #0E1217;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+}
+
+.jobOfferHeaderTitle
+{
+    width: calc(100% - 10rem);
+    max-width: 1000px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.jobOfferHeaderTitle span
+{
+    background-color: #0AC3D7;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

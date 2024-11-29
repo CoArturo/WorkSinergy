@@ -6,11 +6,11 @@ import { useUserContext } from "../../contexts/UserContextZustand"
 
 export const HomeClient: React.FC = () => {
 
-    const { userContext, setUserContext } = useUserContext()
+    
 
 
     const prueba = () => {
-        console.log(userContext)
+        
     }
    
     return(

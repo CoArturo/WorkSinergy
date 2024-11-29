@@ -1,0 +1,52 @@
+
+.profileContainer
+{
+    width: calc(100% - 10rem);
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+.profileBanner
+{
+    width: 100%;
+    height: 150px;
+    background-color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.profileImg
+{
+    width: 120px;
+    height: 120px;
+    margin: 0 2rem;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.profileUsername
+{
+    font-weight: 300;
+    font-size: .90rem;
+}
+
+.profileInfo h3
+{
+    margin-bottom: 5px;
+}
+
+.profileInfo p
+{
+    margin-bottom: 5px;
+}
+
+.profileInfo span
+{
+    margin-right: 1rem;
+}
+
+.profileInfo p > i
+{
+    margin-right: .30rem;
+}

@@ -1,28 +1,43 @@
 import React, { useEffect, useState } from "react"
 import './NewProposal.css'
-import { useLocation } from "react-router-dom"
-import { initialPostJob, PostJob } from "../../Interfaces/Post"
+import { useLocation, useNavigate, useNavigation } from "react-router-dom"
+import { initialPostJob, initialPostJobResponse, PostJob, PostJobResponse } from "../../Interfaces/Post"
+import { aplication, initialAplication } from "../../Interfaces/Aplication"
+import { useUserContext } from "../../contexts/UserContextZustand"
+import { Navigation } from "swiper/modules"
 
 export const NewProposal: React.FC = () => {
 
     const URL = "https://localhost:7014/api/v1/Post/"
+    const PROPOSAL = "https://localhost:7014/api/v1/JobApplciation"
 
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
     const keyValue = queryParams.get('id')
 
-    const [postDetail, setPostDetail] = useState<PostJob>(initialPostJob)
+    const [postDetail, setPostDetail] = useState<PostJobResponse>(initialPostJobResponse)
+    const [aplication, setAplication] = useState<aplication>(initialAplication)
+
+    const { userId, setUserContext } = useUserContext()
+
+    const navigate = useNavigate()
 
     useEffect(()=>{
-        fetchPostCards()
+        console.log(userId)
+        setPage()
     }, [])
 
     useEffect(()=>{
-        console.log(postDetail)
+        
     }, [postDetail])
 
-    const fetchPostCards = () => {
-        fetch(URL + keyValue, {
+    const setPage = async () => {
+        await fetchPostCards()
+        setAplication({...aplication, applicantId:userId, postId:postDetail.id})
+    }
+
+    const fetchPostCards = async () => {
+        await fetch(URL + keyValue, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -30,10 +45,23 @@ export const NewProposal: React.FC = () => {
         })
         .then((response) => response.json())
         .then(data => {
-            
-            // console.log(data.data)
             setPostDetail(data.data)
-            
+        })
+        .catch((error) => console.error("Error: ", error))
+    }
+
+    const sendAplication = async () => {
+        await fetch(PROPOSAL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify(aplication),
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            navigate("/")
         })
         .catch((error) => console.error("Error: ", error))
     }
@@ -49,7 +77,7 @@ export const NewProposal: React.FC = () => {
 
                     <div className="proposalInfo">
                         <div className="proposalInfoTitle">
-                            <h3>{postDetail && postDetail.title} <span>{postDetail && postDetail.abilities[0]}</span></h3>
+                            <h3>{postDetail && postDetail.title} <span>{postDetail && postDetail.tags?.[0]?.name }</span></h3>
                             <small>11 noviembre 2024</small> 
                         </div>
 
@@ -62,17 +90,14 @@ export const NewProposal: React.FC = () => {
                         <div className="proposalInfoBottom">
                             <h4>Habilidades</h4>
                             <div className="proposalAbilities">
-                                <div className="proposalInfoBottomAbility">
-                                    <p>CSS3</p>
-                                </div>
+                            {postDetail && postDetail.abilities.map((ability)=>{
+                                return (
+                                    <div className="proposalInfoBottomAbility" key={ability.id}>
+                                        <p>{ability.name}</p>
+                                    </div>
+                                )
+                            })}
 
-                                <div className="proposalInfoBottomAbility">
-                                    <p>CSS4</p>
-                                </div>
-
-                                <div className="proposalInfoBottomAbility">
-                                    <p>CSS5</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -81,11 +106,11 @@ export const NewProposal: React.FC = () => {
                 <article className="makeProposal">
                     <h3>Cuenta tu historia</h3>
                     <p>Antes de enviar tu solicitud, tómate un momento para contarnos por qué eres el freelancer ideal para este proyecto.</p>
-                    <textarea placeholder="Escribre la descripcion"></textarea>
+                    <textarea onChange={(e)=>setAplication({...aplication, description: e.target.value})} placeholder="Escribre la descripcion"></textarea>
                     <p className="stepTip"><span><i className="fa-regular fa-lightbulb"></i> Tip:</span> Le pondremos en contacto con candidatos especializados en la categoría seleccionada.</p>
                     <div className="makeProposalControls">
-                        <button className="btn submitProposal">Enviar propuesta</button>
-                        <button className="btn cancelProposal">Cancelar</button>
+                        <button className="btn submitProposal" onClick={()=>sendAplication()}>Enviar propuesta</button>
+                        <button className="btn cancelProposal" onClick={()=>navigate("/")}>Cancelar</button>
                     </div>
                 </article>
             </main>

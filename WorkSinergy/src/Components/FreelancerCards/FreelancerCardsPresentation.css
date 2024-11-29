@@ -34,6 +34,13 @@
 .information small > i
 {
     color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.information small
+{
+    color: #000;
+    display: flex;
 }
 
 .information

@@ -36,7 +36,7 @@ export const ClientPostJob: React.FC = () => {
 
     useEffect(()=>{
         console.log(categoriesUser)
-        setPostNewJob({...postNewJob, categories: categoriesUser})
+        setPostNewJob({...postNewJob, tags: categoriesUser})
         setPostNewJob({...postNewJob, abilities: skillsUser})
     }, [categoriesUser, skillsUser])
 
