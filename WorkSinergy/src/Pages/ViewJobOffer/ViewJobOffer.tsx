@@ -32,7 +32,10 @@ export const ViewJobOffer: React.FC = () => {
         .then((response) => response.json())
         .then(data => {
             console.log(data.data)
-            setOffer(data.data)
+            if(data != null)
+            {
+                setOffer(data.data)
+            }
             
         })
         .catch((error) => console.error("Error: ", error))

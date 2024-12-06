@@ -84,7 +84,7 @@ export const JobOffers: React.FC = () => {
                                     </div>
                                     
                                     <div className="jobOfferAction">
-                                        <button className="btn" onClick={()=>navigate(`/offer?id=${offer.id}`)}>Ver propuesta</button>
+                                        <button className="btn" onClick={()=>navigate(`/freelancer/viewoffer?id=${offer.id}`)}>Ver propuesta</button>
                                     </div>
                                 </div>
                             )

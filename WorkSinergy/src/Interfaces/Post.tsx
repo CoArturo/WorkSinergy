@@ -34,6 +34,8 @@ export interface PostJobResponse {
         name: string,
         iso3Code: string
     };
+    applicationsCount: number;
+    createdAt: string;
     contractOption: {
         id: number,
         name: string
@@ -64,5 +66,7 @@ export const initialPostJobResponse: PostJobResponse = {
     to: 0,
     tags: [],
     abilities: [],
-    creatorUserId: ""
+    creatorUserId: "",
+    applicationsCount: 0,
+    createdAt: ""
 };

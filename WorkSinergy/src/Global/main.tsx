@@ -1,10 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '../Global/App.css'
-import { MainIndex } from '../Pages/MainPage/MainIndex'
+import { MainIndex, store } from '../Pages/MainPage/MainIndex'
+import AuthProvider from 'react-auth-kit/AuthProvider'
+import createStore from 'react-auth-kit/createStore'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <MainIndex/>
+    <AuthProvider store={store}>
+      <MainIndex/>
+    </AuthProvider>
   </StrictMode>,
 )

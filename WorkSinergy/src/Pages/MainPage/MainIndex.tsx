@@ -1,70 +1,72 @@
 import React, { useEffect, useState } from "react";
 import { Login } from "../Login/Login";
-import { Input } from "../../Components/General/Inputs/Input";
 import './MainIndex.css'
-import { ClientPostJob } from "../ClientPostJob/ClientPostJob";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "../../Components/Navigation/Navbar/Navbar";
-import { NewProposal } from "../NewProposal/NewProposal";
+import { BrowserRouter, Routes, Route, useSearchParams } from "react-router-dom";
+import { NavbarFreelancer } from "../../Components/Navigation/Navbar/Navbar";
+
 import { UserLogin } from "../../Interfaces/UserLogin";
-import { useUserContext } from "../../contexts/UserContextZustand";
-import { JobOffers } from "../JobOffers/JobOffers";
+
 import { routes } from "../../Router/Routes";
-import ProtectedRoutes from "../../Auth/ProtectedRoutes";
+
+import { NavbarNoUser } from "../../Components/Navigation/Navbar/NavbarNoUser";
+import { NavbarClient } from "../../Components/Navigation/Navbar/NavbarClient";
+import createStore from "react-auth-kit/createStore";
+import RequireAuth from "@auth-kit/react-router/RequireAuth";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
+import { ContextAuth } from "../../Interfaces/ContextAuth";
+import { useUserContext } from "../../contexts/UserContextZustand";
+
+export const store = createStore({
+    authType:'cookie',
+    authName:'_auth',
+    cookieDomain: window.location.hostname,
+    cookieSecure: false,
+});
 
 export const MainIndex: React.FC = () => {
-    
-    const [ user, setUser ] = useState<UserLogin>({input: "defaultcontractor@gmail.com", password: "123Pa$$word!"})
 
-    const { userId, setUserContext } = useUserContext()
+    const {userRol, setUserRolContext} = useUserContext()
+
+    const auth: any = useAuthUser()
+    const [ user, setUser ] = useState<UserLogin>({input: "defaultcontractor@gmail.com", password: "123Pa$$word!"})
+    const [ authNav, setAuthNav ] = useState<string>(userRol)
+    // const [ user, setUser ] = useState<UserLogin>({input: "defaultapplicant@gmail.com", password: "123Pa$$word!"})
     const URL = "https://localhost:7014/api/Account/authenticate"
 
+
     useEffect(()=>{
-        autenticarLogin()
-    }, [])
-
-
-    const autenticarLogin = async() => {
-        fetch(URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-                },
-            body: JSON.stringify(user),
-        })
-        .then((response) => response.json())
-        .then(data => {
-            setUserContext(data.id)
-        })
-        .catch((error) => console.error("Error: ", error))
-    }
+        console.log(userRol)
+        setAuthNav(auth?.rol)
+    }, [userRol])
 
     return(
             <div className="mainContainer">
                     <BrowserRouter>
-                        <Navbar />
+                        {   
+                            authNav != "" &&
+                            authNav == "Freelancer" ? <NavbarFreelancer /> 
+                                : authNav == "Client" ? <NavbarClient />
+                                : <NavbarNoUser />
+                        }
                         <Routes>
+                            <Route>
+                            {routes.routes
+                                // .filter(route =>  route.Component && route.parent == `/${auth?.rol?.toLowerCase()}`)
+                                .filter(route =>  route.Component) 
+                                .map((route) => (
+                                    <Route
+                                        key={route.id}
+                                        path={route.parent + route.path}
+                                        element={ 
+                                            <RequireAuth fallbackPath={"/welcome/login"}>
+                                                {<route.Component /> }
+                                            </RequireAuth>
+                                         }
+                                         />
+                                        ))}
 
-                            <Route path="/login" element={<Login />} />
-                            <Route element={<ProtectedRoutes/>}>
-                                {routes.map((route)=>{
-                                    return (
-                                        <Route key={route.id} path={route.parent + route.path} element={<route.Component />}/>
-                                    )
-                                })}
                             </Route>
-
-                            
-                            {/* <Route path="freelancer/home" element={<Freelancer />} /> */}
-                            {/* <Route path="/" element={<HomeClient />} /> */}
-                            {/* <Route path="/offer" element={<ViewJobOffer />} />
-                            <Route path="/" element={<Profile />} /> */}
-                            {/* <Route path="/" element={<NewProposal/>} /> */}
-                            <Route path="/" element={<NewProposal/>} />
-                            <Route path="/postnewjob" element={<ClientPostJob />} />
-                            <Route path="/alloffers" element={<JobOffers />} /> 
-
-                            {/* <Route path="/register" element={<RegisterHome />} /> */}
+                            <Route path="/welcome/login" element={<Login />} />
                         </Routes>
                     </BrowserRouter>
             </div>

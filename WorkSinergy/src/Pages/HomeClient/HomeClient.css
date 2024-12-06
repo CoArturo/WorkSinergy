@@ -8,7 +8,7 @@
 
 .homeClientBanner
 {
-    background-image: url("assets/images/homeClienteBanner.png");
+    background-image: url("/assets/images/homeClienteBanner.png");
     background-size: cover;
     width: 100%;
     height: 157px;
@@ -27,7 +27,12 @@
     color: #fff;
 }
 
-.homeClientBanner h2, small
+.homeClientElements small
+{
+    color: #fff;
+}
+
+.homeClientBanner h2
 {
     z-index: 1;
     text-align: center;
@@ -66,7 +71,6 @@
 
 .titleWorks
 {
-    margin-bottom: 1.5rem;
     display: flex;
     width: 100%;
 }
@@ -96,13 +100,13 @@
 .workType
 {
     width: 100%;
-    padding: 0 2.5rem;
+    padding: 2.5rem 2.5rem;
     /* background-color: aqua; */
 }
 
 .talentHeader
 {
-    margin: 1.5rem 0;
+    margin: 0 0;
     display: flex;
     width: 100%;
 }

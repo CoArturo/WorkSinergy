@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import { Outlet, Navigate } from "react-router-dom";
+import { useUserContext } from "../contexts/UserContextZustand";
+import { getCookie } from "./Cookie";
 
-export const ProtectedRoutes = () => {
-    const user = null
-    return user ? <Outlet /> : <Navigate to="/login" />
+interface props {
+    isAuth: boolean;
 }
 
-export default ProtectedRoutes
+
+export const protectedRoutesComponent: React.FC<props> = ({isAuth = true}) => {
+
+    useEffect(()=>{
+        getCookie()
+    },[])
+
+    return isAuth == false ? <Outlet/> : <Navigate to={"/client/home"}/>
+}
+
+export default protectedRoutesComponent

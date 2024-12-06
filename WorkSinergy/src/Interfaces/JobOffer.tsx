@@ -56,3 +56,33 @@ export const initialOffer:Offer = {
     client: InitialClient,
     freelancer: InitialClient
 }
+
+export interface OfferPost {
+    description: string;
+    title: string;
+    startDate: Date; 
+    endDate: Date;   
+    hourlyRate: number;
+    clientUserId: string;
+    freelancerId: string;
+    expirationDate: string; 
+    postId: number;
+    currencyId: number | null;
+    contractOptionId: number;
+    totalHours: number;
+}
+
+export const InitialOfferPost: OfferPost = {
+    description: "",
+    title: "",
+    startDate: new Date,
+    endDate: new Date,
+    hourlyRate: 0,
+    clientUserId: "",
+    freelancerId: "",
+    expirationDate: "",
+    postId: 0,
+    currencyId: 0,
+    contractOptionId: 0,
+    totalHours: 0
+}

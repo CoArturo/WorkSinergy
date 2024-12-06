@@ -43,7 +43,7 @@ export const FreelancerCardsPresentation: React.FC<props> = ({post}) => {
 
                 <div className="botCardControls">
                     <button className="btn btnCard btnSave"><i className="fa-regular fa-bookmark"></i>Guardar</button>
-                    <button className="btn btnCard btnAsk" onClick={()=>navigate(`/solicitar?id=${post.id}`)}>Solicitar</button>
+                    <button className="btn btnCard btnAsk" onClick={()=>navigate(`/freelancer/apply?id=${post.id}`)}>Solicitar</button>
                 </div>
 
             </article>

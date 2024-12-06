@@ -1,0 +1,187 @@
+.newJobOfferContainer
+{
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+}
+
+.newJobOfferBanner
+{
+    width: 100%;
+    background-color: #F2EB51;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.newJobOfferBanner i 
+{
+    font-size: 3rem;
+    margin-left: auto;
+}
+
+.newJobOfferBannerTitle p
+{
+    font-size: .80rem;
+}
+
+.newJobOfferPost
+{
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.newJobOfferPost h3
+{
+    margin-bottom: .30rem;
+}
+
+.newJobOfferPost p
+{
+    font-size: .80rem;
+    margin-bottom: .90rem;
+}
+
+.newJobOfferPostInfoContainer
+{
+    margin-top: 1rem;
+}
+
+.newJobOfferPostInfoContainer h3
+{
+    font-size: .90rem;
+}
+
+.newJobOfferPostInfo
+{
+    width: 100%;
+    max-width: 800px;
+    background-color: #F9F9F9;
+    border: solid 1px #E8E4E4;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.newJobOfferPostInfo h3
+{
+    font-size: 1.3rem;
+    margin-bottom: .50rem;
+}
+
+.newJobOfferPostInfo small
+{
+    display: inline-block;
+    margin-bottom: .50rem;
+}
+
+.newJobOfferPostInfo p
+{
+    font-size: .90rem;
+}
+
+.newJobOfferPeriod
+{
+    width: 100%;
+}
+
+.newJobOfferPeriod h3
+{
+    margin-top: 2rem;
+}
+
+.newJobOfferPeriodTitle
+{
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newJobOfferStartDate
+{
+    margin-right: 2rem;
+}
+
+.newJobOfferDate
+{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.newJobOfferDate label
+{
+    margin-bottom: 1rem;
+}
+
+.newJobOfferBadge
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.newJobOfferPriceType
+{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.newJobOfferPrice
+{
+    margin-right: 1rem;
+    width: 300px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F9F9F9;
+    border: solid 1px #E8E4E4;
+    border-radius: 8px;
+    display: flex;
+    position: relative;
+}
+
+.newJobOfferPrice label
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.newJobOfferBudget
+{
+    margin: 1rem 0;
+}
+
+.newJobOfferInformation
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.newJobOfferInformation textarea
+{
+    width: 650px;
+    height: 300px;
+    padding-top: 1rem;
+}
+
+.newJobOfferControls button
+{
+    width: 200px;
+    height: 40px;
+    margin: 2rem 4rem 4rem 0;
+    background-color: #1C2226;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+
+}
+
+.newJobOfferForm 
+{
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+}

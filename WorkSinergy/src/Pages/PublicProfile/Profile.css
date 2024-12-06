@@ -4,6 +4,9 @@
     width: calc(100% - 10rem);
     max-width: 1000px;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profileBanner
@@ -14,6 +17,7 @@
     display: flex;
     align-items: center;
     border-radius: 8px;
+    border: solid 1px #E8E4E4;
 }
 
 .profileImg
@@ -23,6 +27,14 @@
     margin: 0 2rem;
     border-radius: 50%;
     background-color: #000;
+    overflow: hidden;
+}
+
+.profileImg img
+{
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
 }
 
 .profileUsername
@@ -49,4 +61,89 @@
 .profileInfo p > i
 {
     margin-right: .30rem;
+}
+
+.profileBody
+{
+    width: 100%;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.profileDescription
+{
+    width: 50%;
+    padding: 2rem;
+}
+
+.profileDescription p
+{
+    margin-top: 8px;
+}
+
+.profileAbilities
+{
+    width: 50%;
+    padding: 2rem;
+}
+
+.profileAbilitiesContainer
+{
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.profileAbility
+{
+    margin-right: 1rem;
+    margin-bottom: .50rem;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: .80rem;
+    background-color: #09AABC;
+}
+
+.profileAbility p 
+{
+    color: #fff;
+}
+
+.profileSendOffer
+{
+    background-color: #F7F7F7;
+    width: 400px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: solid 1px #E8E4E4;
+}
+
+.profileSendOffer h3
+{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.profileSendOffer button
+{
+    width: 300px;
+    height: 40px;
+    background-color: #0E1217;
+    color: #fff;
+    font-weight: 500;
+    font-size: .780rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.profileSendOffer button > i 
+{
+    color: #fff;
+    margin-right: 1rem;
 }
