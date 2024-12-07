@@ -43,6 +43,13 @@ export const NewJobOffer: React.FC = () => {
         // console.log(currencys)
     }, [jobOffer])
 
+    useEffect(() => {
+        if(jobOffer.contractOptionId == 1)
+        {
+            setJobOffer({...jobOffer, totalHours: 0})
+        }
+    }, [jobOffer.contractOptionId])
+
     const getPost = async () => {
         await fetch(POST, {
             method: "GET",
@@ -198,6 +205,13 @@ export const NewJobOffer: React.FC = () => {
                                         })
                                     }
                             </Select>
+                        </div>
+
+                        <h3>Horas totales</h3>
+                        <div className="newJobOfferBudget">
+                            <Input required disabled={jobOffer.contractOptionId == 1 ? true : false} placeholder="Ingresa las horas" style={{width: 300, height:40, marginRight:30}} onChange={(e) =>setJobOffer({...jobOffer, totalHours: parseInt(e.target.value)})}>
+                                
+                            </Input>
                         </div>
 
                         <h3>Especifica el monto</h3>

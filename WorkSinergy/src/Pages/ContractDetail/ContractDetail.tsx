@@ -17,7 +17,7 @@ export const ContractDetail: React.FC = () => {
     const [porcentage, setPorcentage] = useState<number>(0)
     const [hours, setHours] = useState<string>("")
     const [payAmount, setPayAmount] = useState({contractId: contract.id, amount: 0})
-    const [selectedFile, setSelectedFile] = useState<any>();
+    const [selectedFile, setSelectedFile] = useState<Blob | null>();
     const [contractOption, setContractOption] = useState<string>("");
 
     const location = useLocation();
@@ -71,7 +71,7 @@ export const ContractDetail: React.FC = () => {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                throw new Error(`HTTP error! Status: ${response}`);
             }
             return response.json();
         })
@@ -79,7 +79,7 @@ export const ContractDetail: React.FC = () => {
             console.log('Respuesta del servidor:', data);
         })
         .catch(error => {
-            console.error('Error en la solicitud:', error);
+            console.error('Error en la solicitud:', error.error);
         });
     }
 
@@ -103,29 +103,30 @@ export const ContractDetail: React.FC = () => {
     }, [contract])
 
     useEffect(()=>{
-        console.log(payAmount)
-    }, [payAmount])
-
-    useEffect(()=>{
         if(contract.contractOption?.id == 1)
         {
             milestone.append('contractId', contract.id.toString())
-            milestone.append('milestoneId',contract && contract.hourlyMilestones != null ? contract.hourlyMilestones[0]?.id.toString() : "")
-            milestone.append('deliverable', selectedFile ?? "")
-            console.log(milestone.values)
-            console.log(contract.id)
+            milestone.append('milestoneId', contract && contract.fixedPriceMilestones != null ? contract.hourlyMilestones[0]?.id.toString() : "")
+            milestone.append('deliverable', selectedFile ?? "" );
+            console.log('contractId:', contract.id);
+            console.log('milestoneId:', contract.fixedPriceMilestones != null ? contract.fixedPriceMilestones[0]?.id : "");
+            console.log('deliverable:', selectedFile);
         }
         else
         {
+            milestone.append('milestoneId',contract && contract.hourlyMilestones != null ? contract.hourlyMilestones[0]?.id.toString() : "")
             milestone.append('contractId',contract.id.toString())
-            milestone.append('deliverable', selectedFile ?? "")
+            milestone.append('deliverable', selectedFile ?? "");
             milestone.append('workedHours',hours.toString())
-            console.log(milestone)
+            console.log('milestoneId:', contract && contract.hourlyMilestones != null ? contract.hourlyMilestones[0]?.id : "");
+            console.log('contractId:', contract.id);
+            console.log('deliverable:', selectedFile);
+            console.log('workedHours:', hours);
 
         }
         setPorcentage(Math.round((contract.currentPayment/contract.totalPayment) * 100 * 100)/100)
         setPayAmount({...payAmount, contractId: contract.id})
-    }, [contract])
+    }, [contract, hours])
 
     return(
         <>
@@ -239,7 +240,7 @@ export const ContractDetail: React.FC = () => {
                                 <div className="contractFileSection">
                                     <p>Entregable</p>
                                     <div className="fileContract">
-                                        <input type="file" onChange={(e)=>setSelectedFile(e.target.value)}/>
+                                        <input type="file" onChange={(e)=>setSelectedFile(e.target.files && e.target.files[0] )}/>
                                         <Input placeholder="Introduce las horas" onChange={(e) => setHours(e.target.value)} type="number" style={{width: 200, height: 50, marginTop: 10, marginRight: 10}}/>
                                         <Button type="primary" disabled={hours == "" ? true : false} onClick={sendEntregable} style={{marginLeft: 10}}><span><i className="fa-solid fa-paper-plane"></i></span></Button>
                                     </div>

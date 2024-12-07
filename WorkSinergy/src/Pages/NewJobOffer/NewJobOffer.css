@@ -166,6 +166,11 @@
     padding-top: 1rem;
 }
 
+.newJobOfferControls
+{
+    display: flex;
+}
+
 .newJobOfferControls button
 {
     width: 200px;

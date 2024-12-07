@@ -31,13 +31,15 @@ export const ClientPostJob: React.FC = () => {
     }, [])
 
     useEffect(()=>{
-        console.log(skills)
-    }, [categories, skills])
+        // console.log(skills)
+        console.log("Categorias", categories)
+        console.log("habilidades", skills)
+    }, [categories])
 
     useEffect(()=>{
         console.log(categoriesUser)
         setPostNewJob({...postNewJob, tags: categoriesUser})
-        setPostNewJob({...postNewJob, abilities: skillsUser})
+        setPostNewJob({...postNewJob, abilities: categoriesUser})
     }, [categoriesUser, skillsUser])
 
     const getCategoriesAndSkills = async() => {
