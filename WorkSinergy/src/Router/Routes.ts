@@ -1,4 +1,7 @@
 import { ClientPostJob } from "../Pages/ClientPostJob/ClientPostJob";
+import { ContractDetail } from "../Pages/ContractDetail/ContractDetail";
+import { ViewAllContracts } from "../Pages/DashBoards/Contracts/ViewAllContracts";
+import { ViewAllContractsFreelancer } from "../Pages/DashBoards/ContractsFreelancer/ViewAllContractsFreelancer";
 import { ViewAllPost } from "../Pages/DashBoards/Posts/ViewAllPosts";
 import { Freelancer } from "../Pages/Freelancer/Freelancer";
 import { HomeClient } from "../Pages/HomeClient/HomeClient";
@@ -121,6 +124,30 @@ export const routes: RoutesList = {
             name: "posts",
             Component: ViewProposal,
             isRender: false,
+        },
+        {
+            id: 13,
+            parent: "/client",
+            path: "/contractdetail",
+            name: "",
+            Component: ContractDetail,
+            isRender: false,
+        },
+        {
+            id: 14,
+            parent: "/client",
+            path: "/viewallcontracts",
+            name: "contracts",
+            Component: ViewAllContracts,
+            isRender: true,
+        },
+        {
+            id: 15,
+            parent: "/freelancer",
+            path: "/viewallcontracts",
+            name: "contracts",
+            Component: ViewAllContractsFreelancer,
+            isRender: true,
         },
     ],
 };

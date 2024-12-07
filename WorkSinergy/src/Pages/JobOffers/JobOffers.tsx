@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './JobOffers.css'
 import { useLocation, useNavigate } from "react-router-dom";
 import { Offer } from "../../Interfaces/JobOffer";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
 export const JobOffers: React.FC = () => {
     
@@ -11,9 +12,11 @@ export const JobOffers: React.FC = () => {
     const [offers, setOffers] = useState<Offer[]>([])
 
     const navigate = useNavigate()
+    const auth: any = useAuthUser()
 
     useEffect(()=>{
         fetchPostNewJob()
+        console.log(auth)
     }, [])
 
     useEffect(()=>{
@@ -21,7 +24,7 @@ export const JobOffers: React.FC = () => {
     }, [offers])
 
     const fetchPostNewJob = () => {
-        fetch(URL + "0243960d-7c09-435e-9b13-c42547825a77", {
+        fetch(URL + auth.id, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -29,6 +32,7 @@ export const JobOffers: React.FC = () => {
         })
         .then((response) => response.json())
         .then(data => {
+            console.log(data)
             if(data.data != null)
             {
                 setOffers(data.data)

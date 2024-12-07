@@ -55,7 +55,7 @@ export const ViewJobOffer: React.FC = () => {
         .then((response) => response.json())
         .then(data => {
             console.log(data)
-            navigate("/alloffers")
+            navigate("/freelancer/offers")
         })
         .catch((error) => console.error("Error: ", error))
     }

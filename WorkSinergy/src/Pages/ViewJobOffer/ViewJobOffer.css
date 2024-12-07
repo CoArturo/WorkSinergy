@@ -104,6 +104,12 @@
     margin: 1rem 0;
 }
 
+.viewJobOfferInfoBody p
+{
+    width: 400ch;
+    text-wrap: wrap;
+}
+
 .viewJobOfferAbilities
 {
     width: 100%;
@@ -121,6 +127,7 @@
     background-color: #EEEEEE;
     margin-right: 1rem;
 }
+
 
 .jobOfferMoreDetails
 {
