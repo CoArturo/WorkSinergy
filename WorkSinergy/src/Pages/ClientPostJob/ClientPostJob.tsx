@@ -3,21 +3,27 @@ import './ClientPostJob.css'
 import { Select } from "antd";
 import { initialPostJob, PostJob } from "../../Interfaces/Post";
 import { GetModel, initialGetModel } from "../../Interfaces/GetModel";
+import { Currency } from "../../Interfaces/Currency";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
+import { useNavigate } from "react-router-dom";
 
 export const ClientPostJob: React.FC = () => {
+    const auth: any = useAuthUser()
 
     const TAG = "https://localhost:7014/api/v1/Tag"
+    const CURRENCY = `https://localhost:7014/api/v1/Currency`
     const SKILL = "https://localhost:7014/api/v1/Ability"
     const JOB = "https://localhost:7014/api/v1/Post"
-    
-    const [postNewJob, setPostNewJob] = useState<PostJob>({...initialPostJob, currency: "dop", creatorUserId: "1"});
+
+    const navigate = useNavigate()
+
+    const [postNewJob, setPostNewJob] = useState<PostJob>({...initialPostJob, creatorUserId: auth.id});
     const [categories, setCategories] = useState<GetModel[]>([initialGetModel]);
     const [skills, setSkills] = useState<GetModel[]>([initialGetModel]);
 
     const [categoriesUser, setCategoriesUser] = useState<number[]>([]);
     const [skillsUser, setSkillsUser] = useState<number[]>([]);
-
-    const body: PostJob = postNewJob; 
+    const [currencys, setCurrencys] = useState<Currency[]>([]);
 
 
     useEffect(()=>{
@@ -25,21 +31,19 @@ export const ClientPostJob: React.FC = () => {
     }, [postNewJob])
 
     useEffect(()=>{
-
-
         getCategoriesAndSkills()
+        getCurrency()
+        console.log(auth.id)
     }, [])
 
     useEffect(()=>{
         // console.log(skills)
-        console.log("Categorias", categories)
-        console.log("habilidades", skills)
-    }, [categories])
+        console.log("Categorias", categoriesUser)
+        console.log("habilidades", skillsUser)
+    }, [categoriesUser, skillsUser])
 
     useEffect(()=>{
-        console.log(categoriesUser)
-        setPostNewJob({...postNewJob, tags: categoriesUser})
-        setPostNewJob({...postNewJob, abilities: categoriesUser})
+        setPostNewJob({...postNewJob, categories: categoriesUser, abilities: skillsUser})
     }, [categoriesUser, skillsUser])
 
     const getCategoriesAndSkills = async() => {
@@ -70,18 +74,41 @@ export const ClientPostJob: React.FC = () => {
         .catch((error) => console.error("Error: ", error))
     }
 
+    const getCurrency = async () => {
+        await fetch(CURRENCY, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+                },
+        })
+        .then((response) => response.json())
+        .then(data => {
+            // console.log(data)
+            if(data.data != null)
+            {
+                setCurrencys(data.data)
+            }
+            // navigate("/")
+        })
+        .catch((error) => console.error("Error: ", error))
+    }
+
     const fetchPostNewJob = () => {
         fetch(JOB, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
               },
-            body: JSON.stringify(body),
+            body: JSON.stringify(postNewJob),
         })
         .then((response) => response.json())
         .then(data => {
             console.log(data)
-            setPostNewJob(initialPostJob)
+            if(data != null)
+            {
+                navigate("/client/home")
+            }
+            // setPostNewJob(initialPostJob)
         })
         .catch((error) => console.error("Error: ", error))
     }
@@ -222,7 +249,7 @@ export const ClientPostJob: React.FC = () => {
                         </div>
 
                         <div className="step4Form stepForm">
-                            <h2>Categoría del Proyecto</h2>
+                            <h2>Habilidades del Proyecto</h2>
                             <p className="stepTip"><span><i className="fa-regular fa-lightbulb"></i> Tip:</span> Agrega de 2-3 habilidades, para mejores resultados.</p>
                             <br />
                             <Select 
@@ -301,11 +328,16 @@ export const ClientPostJob: React.FC = () => {
                             </div>
                             <h3>Divisa</h3>
                             <p className="stepTip stepTip5">Elige la moneda de preferencia para el pago.</p>
-                            <Select placeholder="Selecciona una categoria..." style={{width: 280, height:50, marginRight:30}} defaultValue={null}>
+                            <Select 
+                                placeholder="Selecciona una moneda..." 
+                                style={{width: 280, height:50, marginRight:30}} 
+                                defaultValue={null}
+                                onChange={(value:number)=>setPostNewJob({...postNewJob, currencyId: value})}
+                                >
                                 {
-                                    categories.map((category) => {
+                                    currencys.map((currency) => {
                                         return(
-                                            <Select.Option key={category.id} value={category.id}> {category.name} </Select.Option>
+                                            <Select.Option key={currency.id} value={currency.id}> {currency.name} </Select.Option>
                                         )
                                     })
                                 }

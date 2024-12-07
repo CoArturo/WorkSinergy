@@ -99,7 +99,10 @@ export const NewJobOffer: React.FC = () => {
         .then((response) => response.json())
         .then(data => {
             console.log(data)
-            // navigate("/")
+            if(data != null)
+            {
+                navigate("/client/home")
+            }
         })
         .catch((error) => console.error("Error: ", error))
     }

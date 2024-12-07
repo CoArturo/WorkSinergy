@@ -4,24 +4,24 @@ import { GetModel } from "./GetModel";
 
 export interface PostJob {
     description: string;
-    currency: string;
+    currencyId: number;
     title: string;
     contractOption: string;
     from: number;
     to: number;
-    tags: number[];
+    categories: number[];
     abilities: number[];
     creatorUserId: string;
 }
 
 export const initialPostJob: PostJob = {
     description: "",
-    currency: "",
+    currencyId: 0,
     title: "",
     contractOption: "",
     from: 0,
     to: 0,
-    tags: [],
+    categories: [],
     abilities: [],
     creatorUserId: "",
   };
@@ -43,7 +43,7 @@ export interface PostJobResponse {
     title: string;
     from: number;
     to: number;
-    tags: Category[];
+    categories: Category[];
     abilities: Ability[];
     creatorUserId: string;
 }
@@ -64,7 +64,7 @@ export const initialPostJobResponse: PostJobResponse = {
     title: "",
     from: 0,
     to: 0,
-    tags: [],
+    categories: [],
     abilities: [],
     creatorUserId: "",
     applicationsCount: 0,

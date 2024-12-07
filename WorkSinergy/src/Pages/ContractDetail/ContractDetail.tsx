@@ -237,14 +237,8 @@ export const ContractDetail: React.FC = () => {
                             :
 
                             (
-                                <div className="contractFileSection">
-                                    <p>Entregable</p>
-                                    <div className="fileContract">
-                                        <input type="file" onChange={(e)=>setSelectedFile(e.target.files && e.target.files[0] )}/>
-                                        <Input placeholder="Introduce las horas" onChange={(e) => setHours(e.target.value)} type="number" style={{width: 200, height: 50, marginTop: 10, marginRight: 10}}/>
-                                        <Button type="primary" disabled={hours == "" ? true : false} onClick={sendEntregable} style={{marginLeft: 10}}><span><i className="fa-solid fa-paper-plane"></i></span></Button>
-                                    </div>
-                                </div>
+                                <>
+                                </>
                             )
                         }
                         
