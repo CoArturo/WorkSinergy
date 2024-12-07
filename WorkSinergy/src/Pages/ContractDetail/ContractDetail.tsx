@@ -207,13 +207,13 @@ export const ContractDetail: React.FC = () => {
                                 
                                 <div className="contractHours">
                                     <div className="contractTotalHour contractTotalHourInfo">
-                                        <p>Total de horas trabajadas: <span>{contract.hourlyMilestones && contract.hourlyMilestones[0]?.currentHours}hrs</span></p>
+                                        <p>Total de horas trabajadas: <span>3hrs</span></p>
                                         <br />
                                         <p>Pagado: <span>{contract && contract.currency?.iso3Code}${contract && contract.currentPayment}</span></p>
                                     </div>
 
                                     <div className="contractHourForWork contractTotalHourInfo">
-                                        <p>Horas restantes: <span>{contract.hourlyMilestones && contract.hourlyMilestones[0].totalHours - contract.hourlyMilestones[0]?.currentHours}</span></p>
+                                        <p>Horas restantes: <span>{contract.hourlyMilestones && contract.hourlyMilestones[0]?.currentHours}</span></p>
                                     </div>
                                 </div>
 
@@ -237,8 +237,7 @@ export const ContractDetail: React.FC = () => {
                             :
 
                             (
-                                <>
-                                </>
+                                <></>
                             )
                         }
                         
