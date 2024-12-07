@@ -10,6 +10,7 @@ import { Login } from "../Pages/Login/Login";
 import NewJobOffer from "../Pages/NewJobOffer/NewJobOffer";
 import { NewProposal } from "../Pages/NewProposal/NewProposal";
 import { Profile } from "../Pages/PublicProfile/Profile";
+import { RegisterHome } from "../Pages/RegisterHome/RegisterHome";
 import { ViewJobOffer } from "../Pages/ViewJobOffer/ViewJobOffer";
 import { ViewProposal } from "../Pages/ViewProposal/ViewProposal";
 

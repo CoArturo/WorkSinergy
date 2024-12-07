@@ -1,17 +1,20 @@
 import React from "react"
 import './RegisterHome.css'
+import { useNavigate } from "react-router-dom"
 
 export const RegisterHome: React.FC = () => {
 
+    const navigate = useNavigate()
+
     return(
         <>
-            <div className="login">
+            <div className="registerWelcome">
 
                 <div className="imageBanner">
-                    <img src="assets/images/loginBanner.webp" alt="" />
+                    <img src="/assets/images/loginBanner.webp" alt="" />
                 </div>
 
-                <div className="loginControls">
+                <div className="registerWelcomeControls">
 
                     <h3>Crea una cuenta nueva</h3>
 
@@ -43,7 +46,7 @@ export const RegisterHome: React.FC = () => {
                         <p>Registrarse con X</p>
                     </div>
 
-                    <p className="confirm"> ¿Ya tienes una cuenta? <span>Inicia sesión</span> </p>
+                    <p className="confirm"> ¿Ya tienes una cuenta? <span onClick={()=>navigate("/welcome/login")}>Inicia sesión</span> </p>
 
                     <p className="terminos">
                         Al unirte, aceptas los Términos de servicio de WorkSynergy, lee nuestra Política de privacidad para saber cómo utilizamos tus datos personales.

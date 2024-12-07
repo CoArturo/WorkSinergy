@@ -79,7 +79,7 @@ export const Login: React.FC = () => {
 
                 <div className="loginControls">
 
-                    <div className="backLogin">
+                    <div className="backLogin" onClick={()=>navigate("/welcome")}>
                         <i className="fa-solid fa-arrow-left"></i>
                         <p>Volver</p>
                     </div>

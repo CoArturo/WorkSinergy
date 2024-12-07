@@ -15,6 +15,7 @@ import RequireAuth from "@auth-kit/react-router/RequireAuth";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { ContextAuth } from "../../Interfaces/ContextAuth";
 import { useUserContext } from "../../contexts/UserContextZustand";
+import { RegisterHome } from "../RegisterHome/RegisterHome";
 
 export const store = createStore({
     authType:'cookie',
@@ -67,6 +68,7 @@ export const MainIndex: React.FC = () => {
 
                             </Route>
                             <Route path="/welcome/login" element={<Login />} />
+                            <Route path="/welcome" element={<RegisterHome />} />
                         </Routes>
                     </BrowserRouter>
             </div>

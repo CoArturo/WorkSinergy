@@ -1,5 +1,5 @@
 
-.login
+.registerWelcome
 {
     background-color: var(--primary-color);
     width: 800px;
@@ -25,7 +25,7 @@
     border-radius: 5px;
 }
 
-.loginControls
+.registerWelcomeControls
 {
     width: 50%;
     display: flex;
